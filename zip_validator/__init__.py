@@ -17,9 +17,11 @@ def has_alternate_duplicates(number):
     return True
 
 
-def validate(number):
-    if not in_range(number):
+def validate(val):
+    if not in_range(val):
         return False
+
+    number = int(val)
 
     if not MAX_VALUE > number > MIN_VALUE:
         return False

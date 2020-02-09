@@ -1,14 +1,23 @@
 # number-code-validator
 
-O sistema dos correios de Gotham City tiveram um problema e perderam seu validador de CEPs. Hoje, sua missão é criar um validador de CEPs baseados em algumas pequenas regras listadas abaixo:
+The Gotham City Post Office had an issue and lost its zip code validator system.
+We need to create this validator based in the following rules:
 
-1. O CEP é um número maior que 100.000 e menor que 999999
-2. O CEP não pode conter nenhum nenhum dígito repetitivo alternado em pares
-  121426 # Aqui, 1 é um dígito repetitivo alternado em par.
-  523563 # Aqui nenhum digito é alternado.
-  552523 # Aqui os números 2 e 5 são dígitos alternados repetitivos em par.
-  112233 # Aqui nenhum dígito é repetitivo alternado em par.
+1. The number needs to be greater than 100000;
+2. The number needs to be less than 999999;
+3. The number can't have alternated pair digits, so:
+    * The first digit can't be the same as the third;
+    * The second digit can't be the same as the forth;
+    * The third can't be the same as the fifth;
+    * And the forth can't be the same as the sixth;
+    * Here is some examples:
+        * 121426 - Invalid;
+        * 523563 - Valid;
+        * 552523 - Invalid;
+        * 112233 - Valid.
 
-Você deve desenvolver isto utilizando Python e TDD. Damos preferência a soluções utilizando REGEX e string slicing. Pode-se criar uma interface Web, TK ou ainda no próprio terminal! Queremos ver sua lógica de programação!
 
-Por favor, não coloque este enunciado em seu repositório Git, e também não coloque o nome da empresa. Outros candidatos, se procurarem, acharão e copiarão sua resposta, por isso, evite estas práticas.
+## How to run
+Just run
+    
+    $ python zip_validator.py

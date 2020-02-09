@@ -11,7 +11,7 @@ def in_range(number):
 
 def has_alternate_duplicates(number):
     digits = list(str(number))
-    for i in range(3):
+    for i in range(4):
         if digits[i] == digits[i+2]:
             return False
     return True

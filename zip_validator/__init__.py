@@ -1,14 +1,30 @@
 import re
 
+MIN_VALUE = 100000
+MAX_VALUE = 999999
+
+
+def in_range(number):
+    p = re.compile('^[0-9]{6,6}$')
+    return p.match(str(number))
+
+
+def has_alternate_duplicates(number):
+    digits = list(str(number))
+    for i in range(3):
+        if digits[i] == digits[i+2]:
+            return False
+    return True
+
 
 def validate(number):
-    p = re.compile('^[0-9]{6,6}$')
-    if not p.match(str(number)):
+    if not in_range(number):
         return False
 
-    if number <= 100000:
+    if not MAX_VALUE > number > MIN_VALUE:
         return False
-    elif number >= 999999:
+
+    if not has_alternate_duplicates(number):
         return False
 
     return True
